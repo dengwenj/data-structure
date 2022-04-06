@@ -16,6 +16,8 @@ module.exports = {
     compress: true
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'data-structure'
+    })
   ]
 }
