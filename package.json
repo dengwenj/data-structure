@@ -19,6 +19,7 @@
   "homepage": "https://github.com/dengwenj/data-structure#readme",
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.2.8",
     "webpack": "^5.71.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"

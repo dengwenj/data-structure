@@ -1,3 +1,8 @@
+const a: string = 'de'
+console.log(a);
+
+
+export {}
 
 
 // 要指定要不要 HMR
