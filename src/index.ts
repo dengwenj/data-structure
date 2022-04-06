@@ -1,8 +1,4 @@
-const a: string = 'de'
-console.log(a);
-
-
-export {}
+import './structure/stack/test'
 
 
 // 要指定要不要 HMR

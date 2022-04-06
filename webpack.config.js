@@ -9,6 +9,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    extensions: ['.js', '.json', '.wasm', '.ts']
+  },
   devServer: {
     hot: 'only',
     hot: true,
