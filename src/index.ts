@@ -1,6 +1,7 @@
 // import './structure/stack/test'
 // import './structure/queue'
-import './structure/queue/priority'
+// import './structure/queue/priority'
+import './structure/linked-list/test'
 
 
 // 要指定要不要 HMR
