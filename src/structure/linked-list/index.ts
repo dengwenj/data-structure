@@ -1,11 +1,13 @@
 interface INode {
   element: unknown
   next: INode | null
+  pre?: INode | null
 }
 
-class Node {
+export class Node {
   element: unknown
   next: INode | null
+  pre?: INode | null
 
   constructor(element: unknown) {
     this.element = element
@@ -15,6 +17,7 @@ class Node {
 
 export default class LinkedList {
   root: INode | null
+  tail?: INode | null
   length: number
 
   constructor() {
@@ -29,16 +32,18 @@ export default class LinkedList {
     const newNode = new Node(element)
 
     // linkedList.root 为空
-    if (!this.root) return this.root = newNode
+    if (!this.root) {
+      this.root = newNode
+    } else {
+      // linkedList.root 不为空
+      let current = this.root
+      while (current.next) {
+        current = current.next
+      }
 
-    // linkedList.root 不为空
-    let current = this.root
-    while (current.next) {
-      current = current.next
+      // current.next 为 null
+      current.next = newNode
     }
-
-    // current.next 为 null
-    current.next = newNode
   }
 
   // insert：向列表的特定位置插入一个新的项
