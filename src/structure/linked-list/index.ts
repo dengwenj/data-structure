@@ -114,12 +114,23 @@ export default class LinkedList {
   }
 
   // removeAt：从列表的特定位置移除一项
-  // removeAt(position: number) {
-  //   if (position < 0 || position > this.length - 1) return false
+  removeAt(position: number) {
+    if (position < 0 || position > this.length - 1) return false
 
-  //   let idx = 0
+    let idx = 0
+    let pre = null
+    let current = this.root
+    while (idx++ < position) {
+      pre = current
+      current = current!.next
+    }
 
-  // }
+    let remove = current
+    pre!.next = current!.next
+
+    this.length--
+    return remove
+  }
 
   // isEmpty：看链表中有没有元素
   // size：链表的元素个数
