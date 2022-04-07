@@ -69,6 +69,18 @@ export default class LinkedList {
   }
 
   // get：获取对应位置的元素
+  get(position: number) {
+    if (position < 0 || position > this.length - 1) return null
+
+    let idx = 0
+    let current = this.root
+    while (idx++ < position) {
+      current = current!.next
+    }
+
+    return current!.element
+  }
+
   // indexOf：返回元素在列表中的索引，没有该元素返回 -1
   // update：更新某个位置的元素
   // removeAt：从列表的特定位置移除一项
