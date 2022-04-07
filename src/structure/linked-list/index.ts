@@ -117,16 +117,22 @@ export default class LinkedList {
   removeAt(position: number) {
     if (position < 0 || position > this.length - 1) return false
 
+    let remove
     let idx = 0
     let pre = null
     let current = this.root
-    while (idx++ < position) {
-      pre = current
-      current = current!.next
-    }
+    if (position === 0) {
+      this.root = current!.next
+      remove = current
+    } else {
+      while (idx++ < position) {
+        pre = current
+        current = current!.next
+      }
 
-    let remove = current
-    pre!.next = current!.next
+      remove = current
+      pre!.next = current!.next
+    }
 
     this.length--
     return remove

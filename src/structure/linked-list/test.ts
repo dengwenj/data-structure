@@ -21,4 +21,5 @@ linkedList.append('hmm')
 // console.log(linkedList.update(2, 'xxx'))
 
 console.log(linkedList.removeAt(2))
+console.log(linkedList.removeAt(0))
 console.log(linkedList)
