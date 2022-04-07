@@ -42,6 +42,32 @@ export default class LinkedList {
   }
 
   // insert：向列表的特定位置插入一个新的项
+  insert(position: number, element: any) {
+    const newNode = new Node(element)
+
+    if (position < 0 || position > this.length) return false
+
+    if (position === 0) {
+      newNode.next = this.root
+      this.root = newNode
+    } else {
+      // 插入其他位置
+      let idx = 0
+      let pre = null
+      let current = this.root
+      while (idx++ < position) {
+        pre = current
+        current = current!.next
+      }
+
+      pre!.next = newNode
+      newNode.next = current
+    }
+
+    this.length++
+    return true
+  }
+
   // get：获取对应位置的元素
   // indexOf：返回元素在列表中的索引，没有该元素返回 -1
   // update：更新某个位置的元素
