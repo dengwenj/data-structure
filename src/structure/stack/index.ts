@@ -17,6 +17,7 @@ export default class Stack {
 
   // peek：返回栈顶的元素，查看栈顶的元素
   peek() {
+    if (this.isEmpty()) return null
     return this.arr[this.arr.length - 1]
   }
 
