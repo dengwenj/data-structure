@@ -23,3 +23,7 @@ linkedList.append('hmm')
 console.log(linkedList.removeAt(2))
 console.log(linkedList.removeAt(0))
 console.log(linkedList)
+
+console.log(linkedList.remove('hmm'))
+console.log(linkedList)
+

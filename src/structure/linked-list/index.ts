@@ -138,6 +138,12 @@ export default class LinkedList {
     return remove
   }
 
+  remove(element: any) {
+    const idx = this.indexOf(element)
+
+    return this.removeAt(idx)
+  }
+
   // isEmpty：看链表中有没有元素
   isEmpty() {
     return this.length === 0
