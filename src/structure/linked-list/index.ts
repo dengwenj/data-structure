@@ -133,5 +133,11 @@ export default class LinkedList {
   }
 
   // isEmpty：看链表中有没有元素
+  isEmpty() {
+    return this.length === 0
+  }
   // size：链表的元素个数
+  size() {
+    return this.length
+  }
 }
