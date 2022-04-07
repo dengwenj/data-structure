@@ -32,3 +32,23 @@ export default class Queue {
     return this.arr.length
   }
 }
+
+export const passGame = (nameLsit: string[], num: number) => {
+  const queue = new Queue()
+
+  // 加入队列
+  nameLsit.forEach((item) => {
+    queue.addQueue(item)
+  })
+
+  while (queue.size() > 1) {
+    for (let i = 0; i < num - 1; i++) {
+      queue.addQueue(queue.removeQueue())
+    }
+    queue.removeQueue()
+  }
+
+  return queue.front()
+}
+
+console.log(passGame(['小邓', '小高', '小王', '小郑'], 5))

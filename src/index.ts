@@ -1,4 +1,5 @@
-import './structure/stack/test'
+// import './structure/stack/test'
+import './structure/queue'
 
 
 // 要指定要不要 HMR
