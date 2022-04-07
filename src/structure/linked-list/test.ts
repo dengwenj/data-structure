@@ -17,3 +17,5 @@ console.log(linkedList.get(1))
 
 console.log(linkedList.indexOf('dddd'))
 console.log(linkedList.indexOf('hhhh'))
+
+console.log(linkedList.update(2, 'xxx'))

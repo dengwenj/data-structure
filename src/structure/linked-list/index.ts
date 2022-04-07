@@ -99,7 +99,28 @@ export default class LinkedList {
   }
 
   // update：更新某个位置的元素
+  update(position: number, element: any) {
+    if (position < 0 || position > this.length - 1) return null
+
+    let idx = 0
+    let current = this.root
+    while (idx++ < position) {
+      current = current!.next
+    }
+
+    current!.element = element
+
+    return current
+  }
+
   // removeAt：从列表的特定位置移除一项
+  // removeAt(position: number) {
+  //   if (position < 0 || position > this.length - 1) return false
+
+  //   let idx = 0
+
+  // }
+
   // isEmpty：看链表中有没有元素
   // size：链表的元素个数
 }
