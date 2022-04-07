@@ -1,4 +1,4 @@
-import Stack from './index'
+import Stack, { decToBin } from './index'
 
 const s = new Stack()
 
@@ -16,3 +16,6 @@ console.log(s.peek())
 console.log(s.isEmpty())
 
 console.log(s.size())
+
+console.log(decToBin(100))
+console.log(decToBin(129))

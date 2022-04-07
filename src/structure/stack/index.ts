@@ -1,12 +1,12 @@
 export default class Stack {
-  arr: string[]
+  arr:  (number | string)[]
 
   constructor() {
     this.arr = []
   }
 
   // push：添加一个新元素到栈的位置
-  push(element: string) {
+  push(element: number | string) {
     this.arr.push(element)
   }
 
@@ -29,4 +29,22 @@ export default class Stack {
   size() {
     return this.arr.length
   }
+}
+
+export const decToBin = (num: number) => {
+  const s = new Stack()
+
+  // 入栈
+  while (num > 0) {
+    const remainder = num % 2
+    s.push(remainder)
+    num = Math.floor(num / 2)
+  }
+
+  // 出栈
+  let str = ''
+  while (!s.isEmpty()) {
+    str += s.pop()
+  }
+  return str
 }
