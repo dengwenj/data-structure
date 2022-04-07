@@ -82,6 +82,22 @@ export default class LinkedList {
   }
 
   // indexOf：返回元素在列表中的索引，没有该元素返回 -1
+  indexOf(element: any) {
+    if (!element) throw `${element} is not allow`
+
+    let idx = 0
+    let current = this.root
+    while (current!.element !== element && current!.next !== null) {
+      current = current!.next
+      idx++
+    }
+
+    if (current!.element === element) {
+      return idx
+    }
+    return -1
+  }
+
   // update：更新某个位置的元素
   // removeAt：从列表的特定位置移除一项
   // isEmpty：看链表中有没有元素

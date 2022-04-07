@@ -14,3 +14,6 @@ console.log(linkedList)
 
 console.log(linkedList.get(2))
 console.log(linkedList.get(1))
+
+console.log(linkedList.indexOf('dddd'))
+console.log(linkedList.indexOf('hhhh'))
