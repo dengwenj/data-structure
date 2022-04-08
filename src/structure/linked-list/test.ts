@@ -6,8 +6,8 @@ import { DoublyLinkedList } from "./index2"
 const linkedList = new DoublyLinkedList()
 
 linkedList.append('xiaodeng')
-linkedList.append('wangxiaoer')
-linkedList.append('hmm')
+// linkedList.append('wangxiaoer')
+// linkedList.append('hmm')
 console.log(linkedList)
 
 // linkedList.insert(1, 'zww')

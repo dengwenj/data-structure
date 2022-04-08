@@ -72,8 +72,13 @@ export class DoublyLinkedList extends LinkedList {
     let current = this.root
     if (position === 0) {
       if (this.root) {
-        this.root = this.root.next
-        this.root!.pre = null
+        if (this.length === 1) {
+          this.root = null
+          this.tail = null
+        } else {
+          this.root = this.root.next
+          this.root!.pre = null
+        }
       }
     } else if (position === this.length - 1) {
       this.tail = this.tail!.pre
