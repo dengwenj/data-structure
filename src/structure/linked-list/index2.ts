@@ -1,20 +1,29 @@
 import LinkedList, { Node } from './index'
 
-class DoublyNode extends Node {
+export class DoublyNode extends Node {
   constructor(element: any) {
     super(element)
     this.pre = null
   }
 }
 
-class DoublyLinkedList extends LinkedList {
+export class DoublyLinkedList extends LinkedList {
   constructor() {
     super()
     this.tail = null
   }
 
   append(element: unknown) {
-    
+    const newNode = new DoublyNode(element)
+
+    if (!this.root) {
+      this.root = newNode
+      this.tail = newNode
+    } else {
+      this.tail!.next = newNode
+      newNode.pre = this.tail
+      this.tail = newNode
+    }
   }
 
   insert(position: number, element: any): boolean {

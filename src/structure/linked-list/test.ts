@@ -1,12 +1,15 @@
 import LinkedList from "."
+import { DoublyLinkedList } from "./index2"
 
-const linkedList = new LinkedList()
+// const linkedList = new LinkedList()
+ 
+const linkedList = new DoublyLinkedList()
 
 linkedList.append('dengwj')
 linkedList.append('ww')
 linkedList.append('wangxiaoer')
 linkedList.append('hmm')
-// console.log(linkedList)
+console.log(linkedList)
 
 // linkedList.insert(0, 'jknw')
 // linkedList.insert(2, 'dddd')
@@ -20,10 +23,10 @@ linkedList.append('hmm')
 
 // console.log(linkedList.update(2, 'xxx'))
 
-console.log(linkedList.removeAt(2))
-console.log(linkedList.removeAt(0))
-console.log(linkedList)
+// console.log(linkedList.removeAt(2))
+// console.log(linkedList.removeAt(0))
+// console.log(linkedList)
 
-console.log(linkedList.remove('hmm'))
-console.log(linkedList)
+// console.log(linkedList.remove('hmm'))
+// console.log(linkedList)
 
