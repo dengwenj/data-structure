@@ -5,10 +5,13 @@ import { DoublyLinkedList } from "./index2"
  
 const linkedList = new DoublyLinkedList()
 
-linkedList.append('dengwj')
-linkedList.append('ww')
+linkedList.append('xiaodeng')
 linkedList.append('wangxiaoer')
 linkedList.append('hmm')
+console.log(linkedList)
+
+linkedList.insert(1, 'zww')
+linkedList.insert(0, 'dwj')
 console.log(linkedList)
 
 // linkedList.insert(0, 'jknw')
