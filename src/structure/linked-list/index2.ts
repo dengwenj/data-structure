@@ -63,7 +63,32 @@ export class DoublyLinkedList extends LinkedList {
     return true
   }
 
-  indexOf(element: any): number {
-    return 1
+  removeAt(position: number) {
+    if (position < 0 || position > this.length - 1) return null
+
+    let idx = 0
+    let remove
+    let pre = null
+    let current = this.root
+    if (position === 0) {
+      if (this.root) {
+        this.root = this.root.next
+        this.root!.pre = null
+      }
+    } else if (position === this.length - 1) {
+      this.tail = this.tail!.pre
+      this.tail!.next = null
+    } else {
+      while (idx++ < position) {
+        pre = current
+        current = current!.next
+      }
+
+      pre!.next = current!.next
+      current!.next!.pre = pre
+    }
+
+    this.length--
+    return remove = current
   }
 }

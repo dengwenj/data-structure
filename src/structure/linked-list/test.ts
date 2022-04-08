@@ -10,8 +10,11 @@ linkedList.append('wangxiaoer')
 linkedList.append('hmm')
 console.log(linkedList)
 
-linkedList.insert(1, 'zww')
-linkedList.insert(0, 'dwj')
+// linkedList.insert(1, 'zww')
+// linkedList.insert(0, 'dwj')
+console.log(linkedList)
+
+linkedList.removeAt(2)
 console.log(linkedList)
 
 // linkedList.insert(0, 'jknw')
