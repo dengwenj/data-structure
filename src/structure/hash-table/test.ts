@@ -20,4 +20,4 @@ console.log(hashTable.get('name'))
 console.log(hashTable.get('hhh'))
 
 console.log(hashTable.remove('sex'))
-console.log(hashTable.storage)
+console.log(hashTable)

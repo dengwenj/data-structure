@@ -83,10 +83,19 @@ export default class HashTable {
 
     for (let i = 0; i < item.length; i++) {
       if (item[i][0] === key) {
+        this.count--
         return item.splice(i, 1)
       }
     }
 
     return null
+  }
+
+  isEmpty() {
+    return this.count === 0
+  }
+
+  size() {
+    return this.count
   }
 }
