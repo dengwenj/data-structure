@@ -74,4 +74,19 @@ export default class HashTable {
 
     return null
   }
+
+  remove(key: string) {
+    const idx = this.hashFunc(key, this.limit)
+
+    const item = this.storage[idx]
+    if (!item) return null
+
+    for (let i = 0; i < item.length; i++) {
+      if (item[i][0] === key) {
+        return item.splice(i, 1)
+      }
+    }
+
+    return null
+  }
 }
