@@ -57,6 +57,10 @@ export default class HashTable {
     if (!isKeySame) {
       item.push([key, value])
       this.count++
+
+      if (this.count > this.limit * 0.75) {
+        this.reSize(this.limit * 2)
+      }
     }
   }
 
@@ -84,6 +88,10 @@ export default class HashTable {
     for (let i = 0; i < item.length; i++) {
       if (item[i][0] === key) {
         this.count--
+        if (this.limit > 10 && this.count < this.limit * 0.25) {
+          this.reSize(Math.floor(this.limit / 2))
+        }
+
         return item.splice(i, 1)
       }
     }
@@ -97,5 +105,23 @@ export default class HashTable {
 
   size() {
     return this.count
+  }
+
+  // 扩容
+  reSize(newLimit: number) {
+    const oldStorage = this.storage
+
+    // 重置
+    this.count = 0
+    this.storage = []
+    this.limit = newLimit
+
+    oldStorage.forEach((item) => {
+      if (!item) return
+
+      for (let i = 0; i < item.length; i++) {
+        this.put(item[i][0], item[i][1])
+      }
+    })
   }
 }
