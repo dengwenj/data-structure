@@ -1,4 +1,4 @@
-import HashTable, { hashFunc } from '.'
+import HashTable, { hashFunc, isPrime } from '.'
 
 // console.log(hashFunc('dwj', 10));
 // console.log(hashFunc('zww', 10));
@@ -21,3 +21,6 @@ console.log(hashTable.get('hhh'))
 
 console.log(hashTable.remove('sex'))
 console.log(hashTable)
+
+console.log(isPrime(2));
+console.log(isPrime(1));

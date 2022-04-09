@@ -10,6 +10,12 @@ export function hashFunc(str: string, max: number) {
   return hashCode
 }
 
+export const isPrime = (num: number) => {
+  let temp = Math.ceil(Math.sqrt(num))
+  
+  for (let i = 2; i < temp; i++) if (num % i === 0) return false
+  return true
+}
 
 type Arr = [string, unknown][]
 export default class HashTable {
@@ -18,9 +24,9 @@ export default class HashTable {
   limit: number
 
   constructor() {
-    this.storage = []
-    this.count = 0
-    this.limit = 10
+    this.storage = [] // 数组存储元素
+    this.count = 0 // 当前存放了多少个元素
+    this.limit = 10 // 总个数
   }
 
   hashFunc(str: string, max: number) {
@@ -38,7 +44,7 @@ export default class HashTable {
   put(key: string, value: unknown) {
     const idx = this.hashFunc(key, this.limit)
 
-    // item 可以是链表也可以是数组。解决冲突 
+    // item 可以是链表也可以是数组。解决冲突  
     let item = this.storage[idx]
     if (!item) {
       item = []
@@ -59,7 +65,8 @@ export default class HashTable {
       this.count++
 
       if (this.count > this.limit * 0.75) {
-        this.reSize(this.limit * 2)
+        let newLimit = this.limit * 2
+        this.reSize(this.getPrime(newLimit))
       }
     }
   }
@@ -89,7 +96,8 @@ export default class HashTable {
       if (item[i][0] === key) {
         this.count--
         if (this.limit > 10 && this.count < this.limit * 0.25) {
-          this.reSize(Math.floor(this.limit / 2))
+          let newLimit = Math.floor(this.limit / 2)
+          this.reSize(this.getPrime(newLimit))
         }
 
         return item.splice(i, 1)
@@ -123,5 +131,20 @@ export default class HashTable {
         this.put(item[i][0], item[i][1])
       }
     })
+  }
+
+  isPrime(num: number) {
+    let temp = Math.ceil(Math.sqrt(num))
+    
+    for (let i = 2; i < temp; i++) if (num % i === 0) return false
+    return true
+  }
+
+  getPrime(num: number) {
+    while (!isPrime(num)) {
+        num++
+    }
+
+    return num
   }
 }
