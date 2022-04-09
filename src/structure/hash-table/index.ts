@@ -38,6 +38,7 @@ export default class HashTable {
   put(key: string, value: unknown) {
     const idx = this.hashFunc(key, this.limit)
 
+    // item 可以是链表也可以是数组。解决冲突 
     let item = this.storage[idx]
     if (!item) {
       item = []
@@ -57,5 +58,20 @@ export default class HashTable {
       item.push([key, value])
       this.count++
     }
+  }
+
+  get(key: string) {
+    const idx = this.hashFunc(key, this.limit)
+
+    const item = this.storage[idx]
+    if (!item) return null
+
+    for (let i = 0; i < item.length; i++) {
+      if (item[i][0] === key) {
+        return item[i][1]
+      }
+    }
+
+    return null
   }
 }

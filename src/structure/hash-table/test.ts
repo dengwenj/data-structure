@@ -14,3 +14,7 @@ hashTable.put('sex', '男')
 console.log(hashTable.storage)
 hashTable.put('name', 'ww')
 console.log(hashTable.storage)
+
+
+console.log(hashTable.get('name'))
+console.log(hashTable.get('hhh'))
