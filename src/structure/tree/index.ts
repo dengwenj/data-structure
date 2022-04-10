@@ -61,4 +61,30 @@ export default class BinarySearchTree {
     this.preOrderTranverseNode(node.left)
     this.preOrderTranverseNode(node.right)
   }
+
+  // 中序遍历
+  inOrderTranverse() {
+    this.preOrderTranverseNode(this.root)
+  }
+
+  inOrderTranverseNode(node: INode | null) {
+    if (node === null) return
+    
+    this.preOrderTranverseNode(node.left)
+    console.log(node.data)
+    this.preOrderTranverseNode(node.right)
+  }
+
+  // 后续遍历
+  postOrderTranverse() {
+    this.preOrderTranverseNode(this.root)
+  }
+
+  postOrderTranverseNode(node: INode | null) {
+    if (node === null) return
+
+    this.preOrderTranverseNode(node.left)
+    this.preOrderTranverseNode(node.right)
+    console.log(node.data)
+  }
 }
