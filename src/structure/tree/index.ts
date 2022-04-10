@@ -144,7 +144,39 @@ export default class BinarySearchTree {
     }
 
     // 删除
+    // 1 删除的节点是叶子节点
+    if (current!.right === null && current!.left === null) {
+      if (isLeftChild) {
+        parent!.left = null
+      } else {
+        parent!.right = null
+      }
+    }
     
+    // 2 删除的只要一个子节点
+    if (current!.right === null) { 
+      if (current === this.root) {
+        this.root = current!.left
+      } else {
+        if (isLeftChild) {
+          parent!.left = current!.left
+        } else {
+          parent!.right = current!.left
+        }
+      }
+    }
+    if (current!.left === null) {
+      if (current === this.root) {
+        this.root = current!.right
+      } else {
+        if (isLeftChild) {
+          parent!.left = current!.right
+        } else {
+          parent!.right = current!.right
+        }
+      }
+    }
+
     return true
   }
 }
