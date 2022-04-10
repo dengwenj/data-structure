@@ -177,6 +177,40 @@ export default class BinarySearchTree {
       }
     }
 
+    // 删除的有两个节点
+    if (current!.left !== null && current!.right !== null) {
+      let successor = this.getSuccessor(current!)
+
+      if (this.root === current) {
+        this.root = successor
+      } else if (isLeftChild) {
+        parent!.left = successor
+      } else {
+        parent!.right = successor
+      }
+      
+      successor.left = current!.left
+    }
+
     return true
+  }
+
+  getSuccessor(deNode: INode) {
+    let successerParent = deNode
+    let successer = deNode
+    let current = deNode.right
+
+    while (current !== null) {
+      successerParent = successer
+      successer = current
+      current = current.left
+    }
+
+    if (successer !== deNode.right) {
+      successerParent.left = successer.right
+      successer.right = deNode.right
+    }
+
+    return successer
   }
 }
