@@ -87,4 +87,24 @@ export default class BinarySearchTree {
     this.preOrderTranverseNode(node.right)
     console.log(node.data)
   }
+
+  min() {
+    let node = this.root
+
+    while (node?.left !== null) {
+      node = node!.left
+    }
+
+    return node.data
+  }
+
+  max() {
+    let node = this.root
+
+    while (node?.right !== null) {
+      node = node!.right
+    }
+
+    return node.data
+  }
 }

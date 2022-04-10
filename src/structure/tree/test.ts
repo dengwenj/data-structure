@@ -18,4 +18,7 @@ binarySearchTree.insert(18)
 binarySearchTree.insert(25)
 binarySearchTree.insert(6)
 
-binarySearchTree.preOrderTranverse()
+// binarySearchTree.preOrderTranverse()
+
+console.log(binarySearchTree.max())
+console.log(binarySearchTree.min())
