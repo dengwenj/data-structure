@@ -2,8 +2,8 @@
 // import './structure/queue'
 // import './structure/queue/priority'
 // import './structure/linked-list/test'
-import './structure/hash-table/test'
-
+// import './structure/hash-table/test'
+import './structure/tree/test'
 
 // 要指定要不要 HMR
 // if (module.hot) {

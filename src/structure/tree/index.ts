@@ -48,4 +48,17 @@ export default class BinarySearchTree {
       this.insertNode(node.left, newNode)
     }
   }
+
+  // 先序遍历
+  preOrderTranverse() {
+    this.preOrderTranverseNode(this.root)
+  }
+
+  preOrderTranverseNode(node: INode | null) {
+    if (node === null) return
+
+    console.log(node.data)
+    this.preOrderTranverseNode(node.left)
+    this.preOrderTranverseNode(node.right)
+  }
 }
