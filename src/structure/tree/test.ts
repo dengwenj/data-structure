@@ -22,3 +22,5 @@ binarySearchTree.insert(6)
 
 console.log(binarySearchTree.max())
 console.log(binarySearchTree.min())
+
+console.log(binarySearchTree.search(3))

@@ -107,4 +107,20 @@ export default class BinarySearchTree {
 
     return node.data
   }
+
+  search(data: number) {
+    return this.searchNode(this.root, data) 
+  }
+
+  searchNode(node: INode | null, data: number): boolean {
+    if (node === null) return false
+
+    if (data > node.data) {
+      return this.searchNode(node.right, data)
+    } else if (data < node.data) {
+      return this.searchNode(node.left, data)
+    } else {
+      return true
+    }
+  }
 }
