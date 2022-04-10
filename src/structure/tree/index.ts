@@ -123,4 +123,28 @@ export default class BinarySearchTree {
       return true
     }
   }
+
+  remove(data: number) {
+    let current = this.root
+    let parent = null
+    let isLeftChild
+
+    while (current!.data !== data) {
+      parent = current
+
+      if (data < current!.data) {
+        current = current!.left
+        isLeftChild = true
+      } else {
+        current = current!.right
+        isLeftChild = false
+      }
+
+      if (current === null) return false
+    }
+
+    // 删除
+    
+    return true
+  }
 }
