@@ -1,4 +1,5 @@
 import Dictionay from './dict'
+import Queue from 'structure/queue'
 
 export default class Graph {
   vertexes: string[] // 点
@@ -25,5 +26,30 @@ export default class Graph {
       colors[this.vertexes[i] as any] = 'white'
     }
     return colors
+  }
+
+  bfs(initV: string, handler: (v: string) => void) {
+    const colors = this.initializeColor()
+
+    const queue = new Queue()
+
+    queue.addQueue(initV)
+
+    while (!queue.isEmpty()) {
+      const v = queue.removeQueue()
+
+      const vList = this.edges.get(v)!
+      colors[v] = 'gray'
+
+      for (let i = 0; i < vList.length; i++) {
+        const e = vList[i]
+        if (colors[e as any] === 'white') {
+          queue.addQueue(e)
+        }
+      }
+
+      handler(v)
+      colors[v] = 'black'
+    }
   }
 }
