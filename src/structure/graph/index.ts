@@ -18,4 +18,12 @@ export default class Graph {
     this.edges.get(v1)?.push(v2)
     this.edges.get(v2)?.push(v1)
   }
+
+  initializeColor() {
+    const colors = []
+    for (let i = 0; i < this.vertexes.length; i++) {
+      colors[this.vertexes[i] as any] = 'white'
+    }
+    return colors
+  }
 }
