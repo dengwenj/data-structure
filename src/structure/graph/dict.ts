@@ -1,11 +1,11 @@
 export default class Dictionay {
-  items: Record<string, unknown>
+  items: Record<string, string[]>
 
   constructor() {
     this.items = {}
   }
 
-  set(key: string, value: unknown) {
+  set(key: string, value: string[]) {
     this.items[key] = value
   }
 
