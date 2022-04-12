@@ -27,6 +27,17 @@ export default class ArrayList {
   }
 
   // 选择排序
+  selectionSort() {
+    for (let i = 0; i < this.array.length - 1; i++) {
+      let min = i
+      for (let j = min + 1; j < this.array.length; j++) {
+        if (this.array[min] > this.array[j]) {
+          min = j
+        }
+      }
+      this.swap(min, i)
+    }
+  }
 
   // 插入排序
 
@@ -47,5 +58,8 @@ al.insert(1218)
 al.insert(1120)
 console.log(al.array.join('-'))
 
-al.bubbleSort()
+// al.bubbleSort()
+// console.log(al.array.join('-'))
+
+al.selectionSort()
 console.log(al.array.join('-'))
