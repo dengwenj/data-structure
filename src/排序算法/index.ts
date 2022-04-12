@@ -40,6 +40,13 @@ export default class ArrayList {
   }
 
   // 插入排序
+  insertionSort() {
+    for (let i = 0; i < this.array.length; i++) {
+      if (this.array[i] > this.array[i + 1]) {
+        
+      }
+    }
+  }
 
   // 希尔排序
 
